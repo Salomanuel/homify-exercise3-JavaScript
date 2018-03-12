@@ -16,19 +16,19 @@ function calendar()
   }
   total = days_in_month[month];
   var date_today = day+' '+months[month]+' '+year;
-  beg_j = date;
-  beg_j.setDate(1);
-  if(beg_j.getDate()==2)
+  beg = date;
+  beg.setDate(1);
+  if(beg.getDate()==2)
   {
-    beg_j=setDate(0);
+    beg=setDate(0);
   }
-  beg_j = beg_j.getDay();
+  beg = beg.getDay();
   document.write('<table><tbody><tr><th colspan="7">'+date_today+'</th></tr>');
   document.write('<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr><tr>');
   week = 0;
-  for(i=1;i<=beg_j;i++)
+  for(i=1;i<=beg;i++)
   {
-    document.write('<td>'+(days_in_month[month-1]-beg_j+i)+'</td>');
+    document.write('<td>'+(days_in_month[month-1]-beg+i)+'</td>');
     week++;
   }
   for(i=1;i<=total;i++)
